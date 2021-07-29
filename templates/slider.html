@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <style>
+            table, th, td {
+              border: 1px solid black;
+              border-collapse: collapse;
+            }
+            th, td {
+              padding: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Threshold: <span id="demo"></span></p>
+        <form id="form" method="POST" action="http://localhost:5000/test">
+            MIN: {{ slider_min }} <input type="range" style="width: 700px;"
+                   min={{ slider_min }} 
+                   max={{ slider_max }} 
+                   value={{ slider_val }}
+                   step ="0.01"
+                   name="name_of_slider"
+                   id="myRange" /> MAX: {{ slider_max }}
+            <br>
+        </form>
+        
+        <table>
+          <tr>
+            <th>Title</th>
+            <th>Criteria</th>
+            <th>Anomalies Found</th>
+            <th>Total Images</th>
+          </tr>
+          <tr>
+            <td>Anamolies in training Data</td>
+            <td>False Negatives</td>
+            <td>{{ train_anomalies }}</td>
+            <td>{{ size_train_pred }}</td>
+          </tr>
+          <tr>
+            <td>Anamolies in Sure</td>
+            <td>True Positives</td>
+            <td>{{ sure_anomalies }}</td>
+            <td>{{ size_sure_pred }}</td>
+          </tr>
+          <tr>
+            <td>Anamolies in Sabi</td>
+            <td>True Positives</td>
+            <td>{{ sabi_anomalies }}</td>
+            <td>{{ size_sabi_pred }}</td>
+          </tr>
+          <tr>
+            <td>Anamolies in Kizu</td>
+            <td>True Positives</td>
+            <td>{{ kizu_anomalies }}</td>
+            <td>{{ size_kizu_pred }}</td>
+          </tr>
+        </table>
+        
+        
+        <script>
+            var slider = document.getElementById("myRange");
+            var output = document.getElementById("demo");
+            output.innerHTML = slider.value;
+
+            slider.oninput = function() {
+              console
+              output.innerHTML = this.value;
+            }
+            slider.onmouseup = function () {
+              document.getElementById("form").submit();
+            }
+        </script>
+    </body>
+</html>
