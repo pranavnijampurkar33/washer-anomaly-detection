@@ -1,6 +1,6 @@
 # washer-anomaly-detection
 * Model is trained on Non-anamolous washer_ok images for anomaly detection using autoencoders. 
-* OpenCV and sklearn Data augmentation is used to increase training data (washer_ok images). Refer：[DA_filters.ipynb](https://github.com/pranavnijampurkar33/washer-anomaly-detection/blob/main/DA_filters.ipynb)と[Train Data](/https://github.com/pranavnijampurkar33/washer-anomaly-detection/tree/main/input_data/da_opencv/pos)
+* OpenCV and sklearn Data augmentation is used to increase training data (washer_ok images). Refer：[DA_filters.ipynb](https://github.com/pranavnijampurkar33/washer-anomaly-detection/blob/main/DA_filters.ipynb)と[Train Data](https://github.com/pranavnijampurkar33/washer-anomaly-detection/tree/main/input_data/da_opencv/pos)
 * Refer [autoencoder-washer.ipynb](https://github.com/pranavnijampurkar33/washer-anomaly-detection/blob/main/autoencoder-washer.ipynb) for model training details
 * Run the [autoencoder-washer.py](https://github.com/pranavnijampurkar33/washer-anomaly-detection/blob/main/autoencoder-washer.py) code to load trained model, adjust the threshold to get optimum results
 * Please follow below instructions to run [autoencoder-washer.py](https://github.com/pranavnijampurkar33/washer-anomaly-detection/blob/main/autoencoder-washer.py)
